@@ -32,7 +32,7 @@ public class RozetkaTest {
                 .getHeader()
                 .search("iphone");
 
-        resultPage.verifyQuantityOfResults(5);
+        resultPage.verifyQuantityOfResults(55);
 
         var priceOnTheSearchResultsPage = resultPage.priceOfTheParticularSearchResult(3);
 
