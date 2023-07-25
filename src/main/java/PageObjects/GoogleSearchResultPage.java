@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GoogleSearchResultPage {
 
-    public static void getDisplayedResultsQuantity(int expextedResultsquantity) {
+    public void getDisplayedResultsQuantity(int expextedResultsquantity) {
         $$x("// h3[@class='LC20lb MBeuO DKV0Md']").shouldHave(size(expextedResultsquantity));
     }
 

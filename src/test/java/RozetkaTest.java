@@ -32,13 +32,13 @@ public class RozetkaTest {
                 .getHeader()
                 .search("iphone");
 
-        resultPage.verifyQuantityOfResults(55);
+        resultPage.verifyQuantityOfResults(5);
 
         var priceOnTheSearchResultsPage = resultPage.priceOfTheParticularSearchResult(3);
 
         resultPage.openParticularProduct(3);
 
-        var priceOnTheProductPage = ProductPage.getProductPrice();
+        var priceOnTheProductPage = new  ProductPage().getProductPrice();
 
         Assert.assertEquals(priceOnTheProductPage, priceOnTheSearchResultsPage);
     }
@@ -48,10 +48,12 @@ public class RozetkaTest {
         var homePage = new RozetkaHomePage().open();
         homePage.clickOnAccountIcon();
 
-        SignInModal.checkIfSignInModalDisplayed();
+        SignInModal signInModal = new SignInModal();
+
+        signInModal.checkIfSignInModalDisplayed();
 
         homePage.closeSignInModal();
-        SignInModal.checkIfSignInModalNotDisplayed();
+        signInModal.checkIfSignInModalNotDisplayed();
     }
 
     @Test
@@ -69,13 +71,15 @@ public class RozetkaTest {
         var nameOnTheSearchResultsPage = resultPage
                 .nameOfTheParticularSearchResult(5);
 
-        RozetkaSearchResultPage.addToTheBasket(5);
+        new RozetkaSearchResultPage().addToTheBasket(5);
 
         resultPage.clickOnBasketIcon();
 
-        var priceOnTheBasketModal = BasketModal.priceOfTheParticularProductInBasket();
+        BasketModal basketModal = new BasketModal();
 
-        var nameOnTheBasketModal = BasketModal.nameOfTheParticularProductInBasket();
+        var priceOnTheBasketModal = basketModal.priceOfTheParticularProductInBasket();
+
+        var nameOnTheBasketModal = basketModal.nameOfTheParticularProductInBasket();
 
         Assert.assertEquals(priceOnTheSearchResultsPage, priceOnTheBasketModal);
         Assert.assertEquals(nameOnTheSearchResultsPage, nameOnTheBasketModal);

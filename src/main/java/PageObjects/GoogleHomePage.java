@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class GoogleHomePage {
 
-    public static void goBackToHomePage() {
+    public void goBackToHomePage() {
         $(By.id("logo")).click();
         $x("//img[@alt='Google']").shouldBe(Condition.visible);
         $x("//div[@class='SDkEP']").shouldBe(Condition.visible);

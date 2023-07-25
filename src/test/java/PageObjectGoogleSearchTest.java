@@ -16,14 +16,14 @@ public class PageObjectGoogleSearchTest {
     @Test
     public void verifyDisplayedResultsQuantity_PO() {
         new GoogleHomePage().open().search("funny dogs");
-        GoogleSearchResultPage.getDisplayedResultsQuantity(9);
+        new GoogleSearchResultPage().getDisplayedResultsQuantity(9);
     }
 
     @Test
     public void verifyUserIsAbleToNavigateBackToTheHomepage_PO() {
         var searchResultPage = new GoogleHomePage().open().search("Selene");
         Assert.assertTrue(searchResultPage.getFirstSearchResultText().contains("Selene"));
-        GoogleHomePage.goBackToHomePage();
+        new GoogleHomePage().goBackToHomePage();
         Assert.assertTrue(webdriver().driver().url().contains("https://www.google.com/webhp?hl="));
 
     }

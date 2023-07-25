@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class RozetkaSearchResultPage extends PageWithHeader {
 
     @Step("RozetkaSearchResultPage: add to basket by clicking on {cartIconForParticularProductNumber}")
-    public static RozetkaSearchResultPage addToTheBasket(Integer cartIconForParticularProductNumber) {
+    public RozetkaSearchResultPage addToTheBasket(Integer cartIconForParticularProductNumber) {
         $x(String.format("(//button[@class='buy-button goods-tile__buy-button ng-star-inserted']) [%s]", cartIconForParticularProductNumber)).click();
         return new RozetkaSearchResultPage();
     }
