@@ -2,7 +2,7 @@
 <suite name="Class name suite">
     <test name="org.testfort">
         <packages>
-            <package name="java"/>
+            <package name="com.google"/>
         </packages>
     </test>
 </suite>
