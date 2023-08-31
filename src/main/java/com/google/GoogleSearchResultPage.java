@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GoogleSearchResultPage {
 
-    public void getDisplayedResultsQuantity(int expextedResultsquantity) {
-        $$x("// h3[@class='LC20lb MBeuO DKV0Md']").shouldHave(size(expextedResultsquantity));
+    public void getDisplayedResultsQuantity(int expectedResultsQuantity) {
+        $$x("// h3[@class='LC20lb MBeuO DKV0Md']").shouldHave(size(expectedResultsQuantity));
     }
 
     public String getFirstSearchResultText() {
