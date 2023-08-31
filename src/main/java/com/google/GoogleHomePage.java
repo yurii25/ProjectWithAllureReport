@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class GoogleHomePage {
 
     public void goBackToHomePage() {
-        $(By.id("logo")).click();
+        $(By.xpath("//div [@class='logo']")).shouldBe(Condition.visible).click();
         $x("//img[@alt='Google']").shouldBe(Condition.visible);
         $x("//div[@class='SDkEP']").shouldBe(Condition.visible);
     }
