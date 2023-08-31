@@ -1,7 +1,6 @@
 package ua.com.rozetka;
 
 import com.codeborne.selenide.Configuration;
-import ua.com.rozetka.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -91,7 +90,5 @@ public class RozetkaTest {
 
         Assert.assertEquals(priceOnTheSearchResultsPage, priceOnTheBasketModal);
         Assert.assertEquals(nameOnTheSearchResultsPage, nameOnTheBasketModal);
-
-
     }
 }
