@@ -1,4 +1,4 @@
-package PageObjects;
+package ua.com.rozetka;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;

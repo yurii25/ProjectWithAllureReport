@@ -1,4 +1,4 @@
-package PageObjects;
+package ua.com.rozetka;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;

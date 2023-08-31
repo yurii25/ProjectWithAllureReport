@@ -2,7 +2,7 @@
 <suite name="Class name suite">
     <test name="org.testfort">
         <classes>
-            <class name="RozetkaTest"/>
+            <class name="ua.com.rozetka.RozetkaTest"/>
         </classes>
     </test>
 </suite>

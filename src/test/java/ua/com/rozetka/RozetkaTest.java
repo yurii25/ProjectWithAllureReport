@@ -1,5 +1,6 @@
-import PageObjects.*;
-import com.codeborne.selenide.Configuration;
+package ua.com.rozetka;
+
+import ua.com.rozetka.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -38,7 +39,7 @@ public class RozetkaTest {
 
         resultPage.openParticularProduct(3);
 
-        var priceOnTheProductPage = new  ProductPage().getProductPrice();
+        var priceOnTheProductPage = new ProductPage().getProductPrice();
 
         Assert.assertEquals(priceOnTheProductPage, priceOnTheSearchResultsPage);
     }

@@ -1,11 +1,13 @@
-import PageObjects.GoogleHomePage;
-import PageObjects.GoogleSearchResultPage;
+package com.google;
+
+import com.google.GoogleHomePage;
+import com.google.GoogleSearchResultPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 
-public class PageObjectGoogleSearchTest {
+public class GoogleSearchTest {
 
     @Test
     public void verifyFirstResultLinkContainsKitten_PO() {

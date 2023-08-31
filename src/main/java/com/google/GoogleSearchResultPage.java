@@ -1,4 +1,4 @@
-package PageObjects;
+package com.google;
 
 
 import com.codeborne.selenide.Condition;
