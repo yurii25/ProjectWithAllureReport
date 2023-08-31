@@ -11,8 +11,6 @@ public class RozetkaHomePage extends PageWithHeader {
 
     @Step ("RozetkaHomePage: open homepage")
     public RozetkaHomePage open() {
-        Configuration.browser = "chrome";
-//        Configuration.holdBrowserOpen = true;
         Selenide.open("https://rozetka.com.ua/ua/");
         return this;
     }

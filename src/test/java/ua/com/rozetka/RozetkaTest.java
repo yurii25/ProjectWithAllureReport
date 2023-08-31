@@ -22,14 +22,18 @@ public class RozetkaTest {
         System.out.println("The single test has started");
     }
 
-    @AfterMethod
-    public void afterMethod() {
+
+    static {
+        Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = true;
     }
 
-    @Test
-    public void verifyProductSearchDetails() {
-        var resultPage = new RozetkaHomePage()
+    RozetkaHomePage rozetkaHomePage = new RozetkaHomePage();
+    
+
+    @Test(testName = "Verify product search results")
+    void verifyProductSearchResults() {
+        var resultPage = rozetkaHomePage
                 .open()
                 .getHeader()
                 .search("iphone");
@@ -45,9 +49,10 @@ public class RozetkaTest {
         Assert.assertEquals(priceOnTheProductPage, priceOnTheSearchResultsPage);
     }
 
-    @Test
-    public void verifyLoginModal() {
-        var homePage = new RozetkaHomePage().open();
+    @Test(testName = "Verify login modal presence")
+    void verifyLoginModalPresence() {
+        var homePage = rozetkaHomePage.open();
+
         homePage.clickOnAccountIcon();
 
         SignInModal signInModal = new SignInModal();
@@ -56,11 +61,12 @@ public class RozetkaTest {
 
         homePage.closeSignInModal();
         signInModal.checkIfSignInModalNotDisplayed();
+
     }
 
-    @Test
-    public void verifyProductSearchDetailsAndBasketInfo() {
-        var resultPage = new RozetkaHomePage()
+    @Test(testName = "Verify product search details and basket info")
+    void verifyProductSearchDetailsAndBasketInfo() {
+        var resultPage = rozetkaHomePage
                 .open()
                 .getHeader()
                 .search("dell");
@@ -85,6 +91,7 @@ public class RozetkaTest {
 
         Assert.assertEquals(priceOnTheSearchResultsPage, priceOnTheBasketModal);
         Assert.assertEquals(nameOnTheSearchResultsPage, nameOnTheBasketModal);
+
 
     }
 }
