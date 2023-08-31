@@ -1,5 +1,6 @@
 package ua.com.rozetka;
 
+import com.codeborne.selenide.Configuration;
 import ua.com.rozetka.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -23,7 +24,7 @@ public class RozetkaTest {
 
     @AfterMethod
     public void afterMethod() {
-//        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -84,5 +85,6 @@ public class RozetkaTest {
 
         Assert.assertEquals(priceOnTheSearchResultsPage, priceOnTheBasketModal);
         Assert.assertEquals(nameOnTheSearchResultsPage, nameOnTheBasketModal);
+
     }
 }

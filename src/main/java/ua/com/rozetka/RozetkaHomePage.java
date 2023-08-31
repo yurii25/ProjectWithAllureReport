@@ -3,6 +3,9 @@ package ua.com.rozetka;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
+import lombok.Builder;
+import lombok.val;
+
 
 public class RozetkaHomePage extends PageWithHeader {
 
@@ -13,6 +16,5 @@ public class RozetkaHomePage extends PageWithHeader {
         Selenide.open("https://rozetka.com.ua/ua/");
         return this;
     }
-
 
 }

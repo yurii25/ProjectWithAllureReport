@@ -1,11 +1,17 @@
 package com.google;
 
+import com.codeborne.selenide.Configuration;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 
 public class GoogleSearchTest {
+
+    static {
+        Configuration.browser = "chrome";
+        Configuration.holdBrowserOpen = true;
+    }
 
     GoogleHomePage googleHomePage = new GoogleHomePage();
 

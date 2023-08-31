@@ -1,6 +1,7 @@
 package ua.com.rozetka;
 
 import io.qameta.allure.Step;
+import lombok.Builder;
 
 import static com.codeborne.selenide.Selenide.$x;
 

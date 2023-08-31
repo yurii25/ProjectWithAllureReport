@@ -17,8 +17,6 @@ public class GoogleHomePage {
     }
 
     public GoogleHomePage open() {
-        Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = true;
         Selenide.open("https://www.google.com/");
         return this;
     }
